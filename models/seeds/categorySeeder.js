@@ -52,11 +52,11 @@ db.once('open', () => {
   const createSeedUser = User.insertMany(SEED_USER, { ordered: true })
 
   const createSeedCategory = Category.insertMany(SEED_CATEGORY, { ordered: true })
-  
+
   Promise.all([createSeedUser, createSeedCategory])
     .then(() => {
       console.log('user & category created!')
-      process.exit()
     })
     .catch(error => console.log(error))
+    .finally(() => process.exit())
 })
