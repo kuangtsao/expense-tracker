@@ -1,17 +1,17 @@
 const db = require('../../config/mongoose')
+const User = require('../user')
+const Category = require('../category')
 const Record = require('../record')
 
-const SEED_RECORD = [
+let seedRecord = [
   {
-    id: 1,
     name: '午餐',
-    date: 2019-04-23,
+    date: '2019-04-23',
     amount: 60,
     userId: 1,
     categoryId: 4
   },
   {
-    id: 2,
     name: '晚餐',
     date: '2019-04-23',
     amount: 60,
@@ -19,7 +19,6 @@ const SEED_RECORD = [
     categoryId: 4
   },
   {
-    id: 3,
     name: '捷運',
     date: '2019-04-23',
     amount: 120,
@@ -27,7 +26,6 @@ const SEED_RECORD = [
     categoryId: 2
   },
   {
-    id: 4,
     name: '電影：驚奇隊長',
     date: '2019-04-23',
     amount: 220,
@@ -35,7 +33,6 @@ const SEED_RECORD = [
     categoryId: 3
   },
   {
-    id: 5,
     name: '租金',
     date: '2019-04-23',
     amount: 25000,
@@ -44,9 +41,31 @@ const SEED_RECORD = [
   }
 ]
 
-db.on('open',() => {
-  Record.insertMany(SEED_RECORD,{ ordered: true })
-    .then(() => console.log('record created!'))
-    .catch(error => console.error(error))
-    .finally(() => process.exit())
+db.on('open', async () => {
+  const users = await User.find().lean()
+  const categories = await Category.find().lean()
+
+  seedRecord.forEach((record) => {
+    if (record.userId === 1) return record.userId = users[0]._id
+    return record.userId = users[1]._id
+  })
+
+  seedRecord.forEach((record) => {
+    if (record.categoryId === 1) return record.categoryId = categories[0]._id
+    else if (record.categoryId === 2) return record.categoryId = categories[1]._id
+    else if (record.categoryId === 3) return record.categoryId = categories[2]._id
+    else if (record.categoryId === 4) return record.categoryId = categories[3]._id
+    return record.categoryId = categories[3]._id
+  })
+  
+  try {
+    await Record.insertMany(seedRecord,{ ordered: true })
+    console.log('records created!')
+  } catch (error) {
+    console.log('an error occured!')
+    console.log(error)
+  }  
+  
+  process.exit()
+
 })
