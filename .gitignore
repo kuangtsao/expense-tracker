@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+# some file i dont want to upload to github
+init.sh
+
+# local development mongodb data
+mongodb/*db
