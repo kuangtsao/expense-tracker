@@ -50,29 +50,10 @@ const SEED_CATEGORY = [
 // 2. 密碼利用 bcrypt hash
 
 db.once('open', () => {
-  const createSeedUser = new Promise((resolve, reject) => {
-    SEED_USER.forEach(userInfo => {
-      User.create({
-        id: userInfo.id,
-        name: userInfo.name,
-        email: userInfo.email,
-        password: userInfo.password
-      })
-    })
-    resolve()
-  })
+  const createSeedUser = User.insertMany(SEED_USER, { ordered: true })
 
-  const createSeedCategory = new Promise((resolve, reject) => {
-    SEED_CATEGORY.forEach(categoryInfo => {
-      Category.create({
-        id: categoryInfo.id,
-        name: categoryInfo.name,
-        icon: categoryInfo.icon
-      })
-    })
-    resolve()
-  })
-
+  const createSeedCategory = Category.insertMany(SEED_CATEGORY, { ordered: true })
+  
   Promise.all([createSeedUser, createSeedCategory])
     .then(() => {
       console.log('user & category created!')
