@@ -77,8 +77,8 @@ ac-restaurantList is running on http://localhost:3000
 - node 14.16.0
 - express 4.16.4
 - express-handlebars 3.0.2
-- bootstrap 5.0.2
-- font-awesome 5.8.1
+- bootstrap 5.1.3
+- font-awesome 6.1.1
 - mongoose 6.1.6
 - handlebars-helpers 0.10.0
 - dotenv 8.2.0
@@ -91,7 +91,7 @@ ac-restaurantList is running on http://localhost:3000
 ## 工作項目
 
 ### 前端
-- [] 依照 wireframe，依照 bootstrap 5 堆出 html
+- [x] 依照 wireframe，利用 bootstrap 5 堆出 html
 
 ### Data Model
 - [] 依據 Data Sheet 做 Mongo 的 Model
