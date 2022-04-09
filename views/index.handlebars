@@ -1,1 +1,84 @@
-<h1>success!</h1>
+<form action="/" method="post">
+  <select id="categories" name="categoryOption" class="form-select" onchange="this.form.submit()">
+    <option selected>選取以查看細項</option>
+    <option value="home">家居物業</option>
+    <option value="transport">交通出行</option>
+    <option value="recreation">休閒物業</option>
+    <option value="food">餐飲食品</option>
+    <option value="other">其他</option>
+  </select>
+</form>
+<div class="my-4 d-flex flex-row justify-content-evenly">
+  <h4>總金額：</h4>
+  <h2>878787</h2>
+</div>
+<div class="row">
+  <ul class="list-group">
+    <li class="list-group-item d-flex">
+      <div class="col-1 d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-house fa-2xl"></i>
+      </div>
+      <div class="col-8 d-flex flex-column">
+        <span class="fs-4 fw-bold">紀錄項目</span>
+        <span class="fs-6 fw-light">2020/02/13</span>
+      </div>
+      <div class="col-3 d-flex justify-content-end h-60 my-2">
+        <a href="/item/edit" class="btn btn-success me-2">編輯</a>
+        <a href="/item/delete" class="btn btn-danger">刪除</a>
+      </div>
+    </li>
+    <li class="list-group-item d-flex">
+      <div class="col-1 d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-van-shuttle fa-2xl"></i>
+      </div>
+      <div class="col-8 d-flex flex-column">
+        <span class="fs-4 fw-bold">紀錄項目</span>
+        <span class="fs-6 fw-light">2020/02/13</span>
+      </div>
+      <div class="col-3 d-flex justify-content-end h-60 my-2">
+        <a href="/item/edit" class="btn btn-success me-2">編輯</a>
+        <a href="/item/delete" class="btn btn-danger">刪除</a>
+      </div>
+    </li>
+    <li class="list-group-item d-flex">
+      <div class="col-1 d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-face-grin-beam fa-2xl"></i>
+      </div>
+      <div class="col-8 d-flex flex-column">
+        <span class="fs-4 fw-bold">紀錄項目</span>
+        <span class="fs-6 fw-light">2020/02/13</span>
+      </div>
+      <div class="col-3 d-flex justify-content-end h-60 my-2">
+        <a href="/item/edit" class="btn btn-success me-2">編輯</a>
+        <a href="/item/delete" class="btn btn-danger">刪除</a>
+      </div>
+    </li>
+    <li class="list-group-item d-flex">
+      <div class="col-1 d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-utensils fa-2xl"></i>
+      </div>
+      <div class="col-8 d-flex flex-column">
+        <span class="fs-4 fw-bold">紀錄項目</span>
+        <span class="fs-6 fw-light">2020/02/13</span>
+      </div>
+      <div class="col-3 d-flex justify-content-end h-60 my-2">
+        <a href="/item/edit" class="btn btn-success me-2">編輯</a>
+        <a href="/item/delete" class="btn btn-danger">刪除</a>
+      </div>
+    </li>
+    <li class="list-group-item d-flex">
+      <div class="col-1 d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-pen fa-2xl"></i>
+      </div>
+      <div class="col-8 d-flex flex-column">
+        <span class="fs-4 fw-bold">紀錄項目</span>
+        <span class="fs-6 fw-light">2020/02/13</span>
+      </div>
+      <div class="col-3 d-flex justify-content-end h-60 my-2">
+        <a href="/item/edit" class="btn btn-success me-2">編輯</a>
+        <a href="/item/delete" class="btn btn-danger">刪除</a>
+      </div>
+    </li>
+  </ul>
+  <a href="/item/new" class="btn btn-info mt-5">新增支出</a>
+</div>

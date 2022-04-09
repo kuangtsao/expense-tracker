@@ -21,9 +21,14 @@
   "homepage": "https://github.com/kuangtsao/expense-tracker#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.2",
-    "mongoose": "^6.1.6"
+    "express-session": "^1.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.1.6",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   }
 }
