@@ -10,6 +10,7 @@ const port = 3000
 // express-handlebars setting
 const exphbs = require('express-handlebars')
 const methodOverride = require('method-override')
+const routes = require('./routes')
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
@@ -17,9 +18,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 
 // routes
-app.get('/', (req, res) => {
-  res.render('index')
-})
+app.use(routes)
 
 app.listen(port, () => {
   console.log(`express is running on http://localhost:${port}`)
