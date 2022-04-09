@@ -9,9 +9,12 @@ const port = 3000
 
 // express-handlebars setting
 const exphbs = require('express-handlebars')
+const methodOverride = require('method-override')
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
+app.use(express.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
 
 // routes
 app.get('/', (req, res) => {
