@@ -1,6 +1,7 @@
 const db = require('../../config/mongoose')
 const User = require('../user')
 const Category = require('../category')
+const bcrypt = require('bcryptjs')
 
 let SEED_USER = [
   {
@@ -38,10 +39,14 @@ const SEED_CATEGORY = [
   }
 ]
 
+
+
 // TODO:
 // 1. 密碼利用 bcrypt hash
 
 db.once('open', () => {
+  SEED_USER.forEach(user => user.password = bcrypt.hashSync(user.password, 10))
+
   const createSeedUser = User.insertMany(SEED_USER, { ordered: true })
 
   const createSeedCategory = Category.insertMany(SEED_CATEGORY, { ordered: true })
