@@ -46,8 +46,7 @@ const SEED_CATEGORY = [
 ]
 
 // TODO:
-// 1. 確保只會建立一筆資料
-// 2. 密碼利用 bcrypt hash
+// 1. 密碼利用 bcrypt hash
 
 db.once('open', () => {
   const createSeedUser = User.insertMany(SEED_USER, { ordered: true })
