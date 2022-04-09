@@ -8,7 +8,7 @@ const app = express()
 const port = 3000
 
 // express-handlebars setting
-const session = require('express')
+const session = require('express-session')
 const exphbs = require('express-handlebars')
 const methodOverride = require('method-override')
 const routes = require('./routes')
