@@ -2,24 +2,25 @@
   <div class="col-md-6 m-auto">
     <div class="card card-body">
       <h1 class="text-center mt-3">註冊</h1>
+      {{> message}}
       <form action="/users/register" method="POST">
         <div class="form-group">
-          <label for="name"></label>
+          <label for="name">姓名</label>
           <input type="text" id="name" name="name" class="form-control mt-2" placeholder="輸入姓名"
             value="{{ name }}" required>
         </div>
         <div class="form-group">
-          <label for="email" class="my-2">Email</label>
+          <label for="email" class="my-2">電子郵件</label>
           <input type="email" id="email" name="email" class="form-control" placeholder="輸入電子郵件"
             value="{{ email }}" required>
         </div>
         <div class="form-group">
-          <label for="password" class="my-2">Password</label>
+          <label for="password" class="my-2">密碼</label>
           <input type="password" id="password" name="password" class="form-control" placeholder="輸入密碼"
             value="{{ password }}" required>
         </div>
         <div class="form-group">
-          <label for="confirmPassword" class="my-2">Confirm Password</label>
+          <label for="confirmPassword" class="my-2">確認密碼</label>
           <input type="password" id="confirmPassword" name="confirmPassword" class="form-control"
             placeholder="再次輸入密碼" value="{{ confirmPassword }}">
         </div>
