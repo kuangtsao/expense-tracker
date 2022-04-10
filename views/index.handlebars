@@ -34,7 +34,9 @@
       </div>
       <div class="col-3 d-flex justify-content-end h-60 my-2">
         <a href="/records/{{this._id}}/edit" class="btn btn-success me-2">編輯</a>
-        <a href="/records/{{this._id}}/delete" class="btn btn-danger">刪除</a>
+        <form action="/records/{{this._id}}/delete?_method=DELETE" method="POST" style="display: inline;">
+          <button class="btn btn-danger" type="submit">刪除</button>
+        </form>
       </div>
     </li>
     {{/each}}

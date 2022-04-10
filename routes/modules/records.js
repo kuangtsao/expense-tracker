@@ -45,8 +45,17 @@ router.put('/:id/edit', async (req, res) => {
     res.redirect('/')
   } catch (error) {
     console.log(error.stack)
+  }  
+})
+
+router.delete('/:id/delete', async (req, res) => {
+  const _id = req.params.id
+  try {
+    await Record.findByIdAndDelete({ _id }).exec()
+    res.redirect('/')
+  } catch (error) {
+    console.log(error.stack)
   }
-  
 })
 
 module.exports = router
