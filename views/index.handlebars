@@ -1,9 +1,17 @@
 <form action="/" method="post">
   <select id="categories" name="categoryOption" class="form-select" onchange="this.form.submit()">
+  {{#if selectedCategory}}
+    <option value="{{selectedCategory._id}}" selected>{{selectedCategory.name}}</option>
+    <option>選取以查看細項</option>
+    {{#each otherCategory}}
+    <option value="{{this._id}}">{{this.name}}</option>
+    {{/each}}
+  {{else}}  
     <option selected>選取以查看細項</option>
     {{#each category}}
-    <option value={{this._id}}"">{{this.name}}</option>
+    <option value="{{this._id}}">{{this.name}}</option>
     {{/each}}
+  {{/if}}
   </select>
 </form>
 <div class="my-4 d-flex flex-row justify-content-evenly">
