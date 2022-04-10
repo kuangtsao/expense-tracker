@@ -16,6 +16,10 @@ const routes = require('./routes')
 require('./config/mongoose')
 const usePassport = require('./config/passport')
 
+// moogoose query 用
+const Record = require('./models/record')
+const Category = require('./models/category')
+
 
 app.use(session({
   secret: process.env.SESSION_SECRET,
