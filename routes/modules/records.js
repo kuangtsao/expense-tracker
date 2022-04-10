@@ -12,14 +12,19 @@ router.get('/new', async (req, res) => {
 
 router.post('/new', (req, res) => {
   const userId = req.user._id
-  console.log(req.body)
   const { name, categoryId, date, amount } = req.body
-  console.log(`${name},${date},${amount},${userId},${categoryId}`)
 
   return Record.create({ name, date, amount, userId, categoryId})
                .then(() => res.redirect('/'))
                .catch(error => console.error(error))
  
+})
+
+router.get('/:id/edit', async (req, res) => {
+  const _id = req.params.id
+  const record = await Record.findOne({ _id }).populate('categoryId').lean()
+  const category = await Category.find({ _id: { $ne: record.categoryId }}).lean()
+  res.render('edit', { record, category })
 })
 
 module.exports = router
