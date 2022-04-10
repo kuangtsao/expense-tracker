@@ -25,9 +25,12 @@
       <div class="col-1 d-flex justify-content-center align-items-center">
         <i class="fa-solid {{this.categoryId.icon}} fa-2xl"></i>
       </div>
-      <div class="col-8 d-flex flex-column">
+      <div class="col-6 d-flex flex-column">
         <span class="fs-4 fw-bold">{{this.name}}</span>
         <span class="fs-6 fw-light">{{this.date}}</span>
+      </div>
+      <div class="col-2 d-flex justify-content-end">
+        <span class="fs-4 fw-bold mt-3">{{this.amount}}</span>
       </div>
       <div class="col-3 d-flex justify-content-end h-60 my-2">
         <a href="/item/edit" class="btn btn-success me-2">編輯</a>
