@@ -17,7 +17,7 @@
         <label for="record-date" class="col-form-label">類別*：</label>
       </div>
       <div class="col-auto">
-        <select id="select-sort" class="form-select" name="categoryOption" onchange="this.form.submit()">
+        <select id="select-sort" class="form-select" name="categoryId">
           <option selected>選取以查看細項</option>
           {{#each category}}
           <option value="{{this._id}}">{{this.name}}</option>
