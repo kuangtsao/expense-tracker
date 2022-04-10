@@ -72,6 +72,17 @@ $ which docker-compose
 ```
 expense-tracker is running on http://localhost:3000
 ```
+
+## 測試帳號
+```
+name: 廣志
+email: hirosi@kasukabe.saitama
+password: 12345678
+  
+name: 小新
+email: shinnosuke@kasukabe.saitama
+password: 12345678
+```
 ## 開發工具
 - node 14.16.0
 - express 4.16.4
