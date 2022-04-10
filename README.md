@@ -22,7 +22,7 @@ AlphaCamp 學期三作業
 ```
 $ pwd
 [current_path]
-$ git clone https://github.com/kuangtsao/ac-restaurantList.git
+$ git clone https://github.com/kuangtsao/expense-tracker.git
 $ cd ac-restaurantList
 ```
 2. 透過 `npm install` 安裝需要的 package
@@ -52,8 +52,7 @@ $ which docker-compose
 ```
 
 5. 設定環境變數
-參考 `.env.example` 這個檔案設定變數  
-`FACEBOOK_ID` 與 `FACEBOOK_SECRET`需要到 [Meta for Developers](https://developers.facebook.com/) 進行申請，可參考[文件](https://developers.facebook.com/docs/facebook-login)與[課程文件](https://lighthouse.alphacamp.co/courses/118/units/25462)進行設定。  
+參考 `.env.example` 這個檔案設定變數   
 `SESSION_SECRET` 可以依需求自行替換
 
 6. 注入種子資料
@@ -71,7 +70,7 @@ $ which docker-compose
 ```
 只要有看到這個訊息，就可以到瀏覽器輸入 `http://localhost:3000`，就可以使用該專案功能
 ```
-ac-restaurantList is running on http://localhost:3000
+expense-tracker is running on http://localhost:3000
 ```
 ## 開發工具
 - node 14.16.0
@@ -80,13 +79,11 @@ ac-restaurantList is running on http://localhost:3000
 - bootstrap 5.1.3
 - font-awesome 6.1.1
 - mongoose 6.1.6
-- handlebars-helpers 0.10.0
 - dotenv 8.2.0
 - bcryptjs 2.4.3
 - express-session 1.17.1
 - passport 0.4.1 
 - passport-local 1.0.0
-- passport-facebook 3.0.0
 
 ## 工作項目
 
@@ -94,16 +91,16 @@ ac-restaurantList is running on http://localhost:3000
 - [x] 依照 wireframe，利用 bootstrap 5 堆出 html
 
 ### Data Model
-- [] 依據 Data Sheet 做 Mongo 的 Model
-- [] 完成 recordSeeder.js
-- [] 完成 categorySeeder.js
+- [x] 依據 Data Sheet 做 Mongo 的 Model
+- [x] 完成 recordSeeder.js
+- [x] 完成 categorySeeder.js
 
 ### 後端
-- [] 註冊
-  - [] 註冊後可登入登出
-  - [] 登入後才能看到內容，否則轉到登入頁
-- [] 首頁一次瀏覽所有項目
-- [] 首頁看到所有支出的總金額
-- [] 新增一筆支出
-- [] 編輯一筆支出
-- [] 依據類別篩選支出，並顯示總額
+- [x] 註冊
+  - [x] 註冊後可登入登出
+  - [x] 登入後才能看到內容，否則轉到登入頁
+- [x] 首頁一次瀏覽所有項目
+- [x] 首頁看到所有支出的總金額
+- [x] 新增一筆支出
+- [x] 編輯一筆支出
+- [x] 依據類別篩選支出，並顯示總額
